@@ -1,0 +1,359 @@
+/* Colors and Fonts */
+:root {
+  --primary-color: #FFE207;
+  --secondary-color: #035909;
+  --text-color: #333;
+  --background-color: #f5f5f5;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Reset and Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Navbar Styles */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 5vw;
+  width: 90vw;
+  padding: 0.5em 1em;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  font-size: 1.8em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: var(--primary-color);
+  font-size: 1em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 30px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.call-btn {
+  background: var(--secondary-color);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.call-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Hamburger Menu for Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: 0.3s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+
+
+/* Hero Section */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#home .down-btn {
+  position: absolute;
+  bottom: 5%;
+}
+
+#home .down-btn button {
+  padding: 0.8em 2em;
+  font-size: 1.2em;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#home .down-btn button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Service Section */
+.service {
+  display: flex;
+  gap: 2em;
+  padding: 5em 2em;
+  background: var(--primary-color);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.service-item {
+  flex: 1 1 45%;
+  text-align: center;
+  padding: 2em;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.service-item img {
+  border-radius: 10px;
+}
+
+.service-item h1 {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: var(--secondary-color);
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+}
+
+.contact {
+  background-color: var(--primary-color);
+  padding: 5vh 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3em;
+}
+
+.contact h1 {
+  font-size: 2em;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.contact-info, .team-contact {
+  background: var(--secondary-color);
+  border-radius: 15px;
+  padding: 2em;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  transition: background 0.3s;
+  color: white;
+}
+
+.contact-item:hover {
+  background-color: #ffe207a4;
+  color: white;
+}
+
+.contact-item img {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.contact-item h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+}
+
+.team-contact h1 {
+  /* margin-top: 3em; */
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.team-member a{
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  gap: 1em;
+  background: #333;
+}
+
+footer img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+footer img:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries for Tablet and Mobile */
+@media (max-width: 768px) {
+  .service, .contact {
+    flex-direction: column;
+    padding: 2em 1em;
+  }
+
+  .service-item, .contact-info, .contact-people {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  #home .down-btn button {
+    font-size: 1em;
+    padding: 0.5em 1.5em;
+  }
+  .contact-item img{
+      width: 40px;
+      height: 40px;
+  }
+  .contact-item a{
+      font-size: 12px;
+  }
+
+  .call-btn {
+    font-size: 1em;
+    padding: 0.5em 1em;
+  }
+
+  footer img {
+    width: 24px;
+    height: 24px;
+  }
+}
